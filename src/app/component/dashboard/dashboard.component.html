@@ -1,0 +1,148 @@
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 sidebar" id="sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <li class="nav-item tag">
+            <a class="nav-link" href="#">Welcome Admin!</a>
+            <span class="admin">{{ userEmail }}</span>
+          </li>
+          <li class="nav-item">
+            <button class="btn btn-primary Logout" (click)="Logout()">
+              Logout
+            </button>
+            <br />
+            <br />
+          </li>
+          <li class="nav-item"></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main" class="col-md-10 main-content">
+      <h2 class="mt-4 task-heading">
+        Task Dashboard
+        <button
+          class="btn btn-primary mx-3"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+          id="Addtask"
+        >
+          Add Task
+        </button>
+      </h2>
+
+      <div class="table-responsive">
+        <table class="table task-table">
+          <thead>
+            <tr>
+              <th class="tableheading">ID</th>
+              <th class="tableheading">Task Name</th>
+              <th class="tableheading">Task Discription</th>
+              <th class="tableheading">Email</th>
+              <th class="tableheading">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let task of tasklist">
+              <td>{{ task.id }}</td>
+              <td>{{ task.taskname }}</td>
+              <td>{{ task.taskdiscription }}</td>
+              <td>{{ task.email }}</td>
+              <td>
+                <!-- <button class="btn btn-primary" (click)="updatetask()">
+                  Update
+                </button> -->
+                <button class="btn btn-danger" (click)="deletetask(task)">
+                  Delete
+                </button>
+              </td>
+            </tr>
+            <!-- Add more tasks here -->
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-9 content">
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  Add Student Details
+                </h1>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="StudentTaskName" class="form-label">
+                      Task Name</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="taskname"
+                      name="taskname"
+                      [(ngModel)]="taskname"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="TaskDescription" class="form-label"
+                      >Task Description</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="taskdiscription"
+                      name="taskdiscription"
+                      [(ngModel)]="taskdiscription"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="TaskDescription" class="form-label">
+                      Email</label
+                    >
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      name="email"
+                      [(ngModel)]="email"
+                    />
+                  </div>
+
+                  <div class="button">
+                    <button
+                      type="button"
+                      class="btn btn-secondary mx-2"
+                      data-bs-dismiss="modal"
+                    >
+                      Cancle
+                    </button>
+                    <button
+                      type="submit"
+                      class="btn btn-primary"
+                      data-bs-dismiss="modal"
+                      data-bs-toggle="modal"
+                      data-bs-target="#staticBackdrop"
+                      (click)="addtask()"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
