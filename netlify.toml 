@@ -1,3 +1,7 @@
+[build]
+publish = "dist/firebase"
+command = "ng build --prod"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
