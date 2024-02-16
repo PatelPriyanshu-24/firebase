@@ -27,10 +27,10 @@ export class DashboardComponent implements OnInit {
     private data: DataService,
     private plateformlocaton: PlatformLocation
   ) {
-    // history.pushState(null, '', location.href);
-    // this.plateformlocaton.onPopState(() => {
-    //   history.pushState(null, '', location.href);
-    // });
+    history.pushState(null, '', location.href);
+    this.plateformlocaton.onPopState(() => {
+      history.pushState(null, '', location.href);
+    });
   }
 
   userEmail: string = '';
