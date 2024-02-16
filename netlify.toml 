@@ -1,6 +1,7 @@
 [build]
 publish = "dist/firebase"
 command = "ng build --prod"
+base = "/"
 
 [[redirects]]
   from = "/*"
