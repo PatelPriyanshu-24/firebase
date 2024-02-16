@@ -31,10 +31,10 @@ export class UserdashboardComponent {
     private firestore: AngularFirestore,
     private plateformlocaton: PlatformLocation
   ) {
-    history.pushState(null, '', location.href);
-    this.plateformlocaton.onPopState(() => {
-      history.pushState(null, '', location.href);
-    });
+    // history.pushState(null, '', location.href);
+    // this.plateformlocaton.onPopState(() => {
+    //   history.pushState(null, '', location.href);
+    // });
   }
 
   Logout() {
