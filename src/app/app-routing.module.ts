@@ -6,7 +6,7 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { VerifyEmailComponent } from './component/verify-email/verify-email.component';
 import { ForgetPasswordComponent } from './component/forget-password/forget-password.component';
 import { UserdashboardComponent } from './component/userdashboard/userdashboard.component';
-import { AuthGuard } from './guards/auth.guard';
+// import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -24,7 +24,7 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     component: DashboardComponent,
   },
   {
@@ -37,7 +37,7 @@ const routes: Routes = [
   },
   {
     path: 'userdashboard',
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     component: UserdashboardComponent,
   },
 ];
