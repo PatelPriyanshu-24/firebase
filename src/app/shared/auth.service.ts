@@ -25,12 +25,12 @@ export class AuthService {
           if (email == 'patelpriyanshuofc@gmail.com') {
             localStorage.setItem(this.userEmail, email);
             this.router.navigate(['/dashboard']);
-            localStorage.setItem('token', JSON.stringify(res.user?.uid));
+            localStorage.setItem('token', 'true');
             this.isauthentication = true;
           } else {
             this.router.navigate(['userdashboard']);
             localStorage.setItem(this.userEmail, email);
-            localStorage.setItem('token', JSON.stringify(res.user?.uid));
+            localStorage.setItem('token', 'true');
             this.isauthentication = true;
           }
         } else {
@@ -120,14 +120,18 @@ export class AuthService {
           if (email == 'patelpriyanshuofc@gmail.com') {
             localStorage.setItem(this.userEmail, email);
             this.router.navigate(['/dashboard']);
-            localStorage.setItem('token', JSON.stringify(res.user?.uid));
+                      localStorage.setItem('token', 'true');
+
             this.isauthentication = true;
           } else {
             this.router.navigate(['/userdashboard']);
             localStorage.setItem(this.userEmail, email);
-            localStorage.setItem('token', JSON.stringify(res.user?.uid));
+                       localStorage.setItem('token', 'true');
+
             this.isauthentication = true;
           }
+
+           localStorage.setItem('token', JSON.stringify(res.user?.uid));
         }
       },
       (err) => {
